@@ -1,4 +1,5 @@
 from . import repository
+from helper import math as helper_math
 
 class CalculateService(repository.CalculateRepository):
 
@@ -23,7 +24,7 @@ class CalculateService(repository.CalculateRepository):
     def calculate_prima(self):
         result = []
         for x in range(1, int(self.size)+1):
-            if x%1==0 and x%x==0:
+            if helper_math.is_prime(x):
                 result.append(x)
 
         return result
